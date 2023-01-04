@@ -7,13 +7,13 @@
   <body>
     <form
       method="POST"
-      th:action="@{/register}"
+      data-th-action="@{/register}"
       action="#"
-      th:object="${registration}"
+      data-th-object="${registration}"
     >
       Name:
       <input type="text" data-th-field="*{name}" />
-      <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+      <span data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></span>
       <br />
       Age:
       <input type="number" data-th-field="*{age}" />
