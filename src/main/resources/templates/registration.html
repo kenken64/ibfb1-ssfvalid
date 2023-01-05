@@ -9,7 +9,7 @@
       method="POST"
       data-th-action="@{/register}"
       action="#"
-      data-th-object="${registration}"
+      data-th-object="${person}"
     >
       Name:
       <input type="text" data-th-field="*{name}" />
@@ -17,6 +17,7 @@
       <br />
       Age:
       <input type="number" data-th-field="*{age}" />
+      <span data-th-if="${#fields.hasErrors('age')}" data-th-errors="*{age}"></span>
       <br />
       <input type="checkbox" value="Fly drone" data-th-field="*{hobbies}" >Fly drone</input>
       <input type="checkbox" value="Repair drone" data-th-field="*{hobbies}" >
@@ -26,10 +27,14 @@
         value="Shop for drone parts"
         data-th-field="*{hobbies}"
       >Shop for drone parts</input>
+      <span data-th-if="${#fields.hasErrors('hobbies')}" data-th-errors="*{hobbies}"></span>
       <br />
       <input type="radio" value="1" data-th-field="*{isMarried}">isMarried</input>
+      <span data-th-if="${#fields.hasErrors('isMarried')}" data-th-errors="*{isMarried}"></span>
       <br />
+      Date of Birth:
       <input type="date" data-th-field="*{dateOfBirth}" />
+      <span data-th-if="${#fields.hasErrors('dateOfBirth')}" data-th-errors="*{dateOfBirth}"></span>
       <br />
       <button type="submit">Register</button>
     </form>

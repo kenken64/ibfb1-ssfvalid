@@ -16,14 +16,14 @@ public class RegistrationController {
 
     @GetMapping
     public String getRegForm(Model model) {
-        model.addAttribute("registration", new Person());
+        model.addAttribute("person", new Person());
         return "registration";
     }
 
     @PostMapping
-    public String postRegistration(@Valid Person p, BindingResult binding, Model model) {
+    public String postRegistration(@Valid Person person, BindingResult binding, Model model) {
         if (binding.hasErrors()) {
-            model.addAttribute("registration", p);
+            model.addAttribute("person", person);
             return "registration";
         }
 

@@ -23,7 +23,7 @@ public class Person {
 
     private Boolean isMarried;
 
-    @Min(value = 1, message = "Age cannot be less than 1")
+    @Min(value = 10, message = "Age cannot be less than 1")
     @Max(value = 100, message = "Age cannot be more than 100")
     private Integer age;
 
